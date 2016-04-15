@@ -2,7 +2,7 @@
 
 library(png)
 
-train <- read.csv("../data/train.csv", header=TRUE)
+train <- read.csv("train.csv", header=TRUE)
 
 labels <- as.numeric(train[,1])
 train <- train[,-1]
