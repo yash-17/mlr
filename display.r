@@ -1,4 +1,4 @@
-train <- read.csv("train.csv", header=TRUE)
+train <- read.csv("../train.csv", header=TRUE)
 
 labels <- as.numeric(train[,1])
 train <- train[,-1]
@@ -13,4 +13,4 @@ display <- function(i){
 
 }
 
-display(23)
+display(sample(1:nrow(train),1))
