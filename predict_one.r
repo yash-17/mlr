@@ -24,7 +24,7 @@ rotate <- function(x) t(apply(x, 2, rev))
 
 library('jpeg')
 
-my_image <- readJPEG('two.jpg')
+my_image <- readJPEG('testimg.jpg')
 
 r_val <- my_image[,,1]
 g_val <- my_image[,,2]

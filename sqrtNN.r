@@ -18,11 +18,11 @@ colnames(trainingdata) <- c("Input","Output")
 #Going to have 5,5,5,5 hidden layers
 #Threshold is a numeric value specifying the threshold for the partial
 #derivatives of the error function as stopping criteria.
-net.sqrt <- neuralnet(Output~Input,trainingdata, hidden=c(5,5,5,5), threshold=0.01)
+net.sqrt <- neuralnet(Output~Input,trainingdata, hidden=c(4,4,4,4), threshold=0.01)
 print(net.sqrt)
 
 #Plot the neural network
-#plot(net.sqrt)
+plot(net.sqrt)
  
 #Test the neural network on some training data
 testdata <- as.data.frame((1:10)^2) #Generate some squared numbers

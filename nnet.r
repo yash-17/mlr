@@ -1,6 +1,6 @@
 library("neuralnet")
 
-train <- read.csv("tr.csv", header=TRUE)
+train <- read.csv("../train.csv", header=TRUE)
 test <- read.csv("ts1.csv", header=TRUE)
 
 #Column bind the data into one variable
@@ -14,7 +14,6 @@ print(trainingdata)
 net.sqrt <- neuralnet(y~a+b+c+d,trainingdata, hidden=c(20,20,20), err.fct="ce")
 print(net.sqrt)
 plot(net.sqrt)
-print(test)
 net.results<-(compute(net.sqrt,test))
 
  

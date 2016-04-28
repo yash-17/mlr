@@ -41,4 +41,24 @@ net <- neuralnet(f, data=train1, hidden=c(6), err.fct = 'ce', linear.output = FA
 
 print(net)
 
-plot(net)
+r <- sample(1:nrow(train),5)
+train1 <- train[r, ]
+train1 <- train1[,-1]
+net.results<-(compute(net,train1))
+net.resultss <- as.data.frame(net.results)
+
+
+resf <- mat.or.vec(5,1)
+
+for(row in 1:nrow(net.results$net.result)){
+	max <- 1
+	for( col in 1:10 )
+		if (net.results$net.result[row,max] < net.results$net.result[row,col]){
+						max <- col 
+}
+
+resf[row] <- max
+
+			}
+
+print (resf)
